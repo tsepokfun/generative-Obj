@@ -6,7 +6,7 @@ Memory = []
 def getData(n):
     return [PersonalFact[n], Detail[n], Memory[n]]
 
-def add(P, D, M):  # Correctly takes 3 arguments now
+def add(P, D, M):
     global noOfObj
     PersonalFact.append(P)
     Detail.append(D)
