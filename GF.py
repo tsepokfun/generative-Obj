@@ -1,11 +1,9 @@
-import ggg
-
 file = open("fact.txt", "r", encoding="utf-8")
 fact = file.read()
 file.close()
 
 noOfAction = 0
-action = []  # (date, obj_num, action_text, duration)
+action = []  # Store actions as tuples: (date, obj_num, action_text, duration)
 ct = ""
 aim = ""
 
@@ -28,11 +26,6 @@ def adda(date, obj_num, action_text, duration):
 
 def end(Aim, ct):
     global action
-    # --- Optimized Prompt for Final Summary ---
-    summary_prompt = (
-        f"Based on the actions taken by different groups (see below), "
-        f"generate a summary related to '{Aim}' as of {ct}. "
-        f"Consider overall impact and trends. Actions: {action}"
-    )
-    final_summary = ggg.gR(summary_prompt)  # Still use ggg.gR for the final summary
+    summary_prompt = f"Based on the following actions taken by different groups of people, generate a summary related to '{Aim}' as of {ct}. Consider the overall impact and trends. Actions: {action}"
+    final_summary = ggg.gR(summary_prompt)
     return final_summary
